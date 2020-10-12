@@ -49,7 +49,7 @@ for($i = 0; $i < $count_url; $i++){
     $url =$urls[$i];
     $curl_arr[$i] = curl_init($url);
     curl_setopt($curl_arr[$i], CURLOPT_RETURNTRANSFER, true);
-	curl_setopt($curl_arr[$i], CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.A.B.C Safari/525.13");
+    curl_setopt($curl_arr[$i], CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.A.B.C Safari/525.13");
     curl_multi_add_handle($master, $curl_arr[$i]);
 }
 
@@ -61,7 +61,7 @@ do {
 
 for($i = 0; $i < $count_url; $i++){
 	
-	// Create a DOM object from result
+    // Create a DOM object from result
     $result = str_get_html(curl_multi_getcontent( $curl_arr[$i] ));
 	
 	if(!empty($result)) {
