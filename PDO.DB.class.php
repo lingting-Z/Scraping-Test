@@ -6,9 +6,9 @@ class DB{
     function __construct(){
 		
         // Connect to local MySQL database
-		$db="mysql:host=localhost;dbname=mydb";
-		$user = "root";
-		$pw = "";
+	$db="mysql:host=localhost;dbname=mydb";
+	$user = "root";
+	$pw = "";
 
         try{
 			
@@ -28,17 +28,17 @@ class DB{
 		
         try{
 			
-			// Prepared statement
-            $stmt = $this->dbh->prepare("insert into posts (category, title, link, author, publish_date, content) 
+		// Prepared statement
+            	$stmt = $this->dbh->prepare("insert into posts (category, title, link, author, publish_date, content) 
 										VALUES (:category, :title, :link, :author, :publish_date, :content)");
             
-            return $stmt->execute(array("category"=>$category,"title"=>$title,"link"=>$link,"author"=>$author,"publish_date"=>$publish_date,"content"=>$content));
+            	return $stmt->execute(array("category"=>$category,"title"=>$title,"link"=>$link,"author"=>$author,"publish_date"=>$publish_date,"content"=>$content));
            
             
         }catch(PDOException $e){
             
-            echo $e->getMessage();
-			return false;
+            	echo $e->getMessage();
+		return false;
 			
         }
 
