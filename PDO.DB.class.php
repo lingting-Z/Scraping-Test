@@ -6,13 +6,14 @@ class DB{
     function __construct(){
 		
         // Connect to local MySQL database
-	$db="mysql:host=localhost;dbname=mydb";
-	$user = "root";
-	$pw = "";
+		$dbhost="localhost";
+		$dbname="mydb";
+		$user = "root";
+		$pw = "";
 
         try{
 			
-            $this->dbh = new PDO($db,$user,$pw);
+            $this->dbh = new PDO("mysql:host=$dbhost;dbname=$dbname",$user,$pw);
             echo "Connected database successfully";
 			
         }catch(PDOException $pe){
