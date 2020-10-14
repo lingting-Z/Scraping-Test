@@ -107,7 +107,7 @@ for($i = 0; $i < $count_url; $i++){
 		
 	}
 }
-
+curl_multi_close($master);
 echo "<br>Scraping data completed!";
 ?>
 
